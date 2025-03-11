@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import 'tailwindcss';
+/* Import Roboto font from Google Fonts */
+
+@theme {
+  --font-display: 'Roboto';
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  /* Apply Roboto font */
+  box-sizing: border-box;
+  /* Ensure consistent box model */
+  margin: 0;
+  /* Reset default margin */
+  padding: 0;
+  /* Reset default padding */
+  background-color: #f2f2f2;
+  /* Optional: Background color */
+}
+
+/* click animation */
+
+.click {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 auto;
+  transition: all 0.4s ease-in;
+}
+
+.click span {
+  position: relative;
+}
+
+.click:before {
+  content: '';
+  background-color: aliceblue;
+  border-radius: 6px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale(0.001, 0.001);
+}
+
+.click:focus {
+  outline: 0;
+}
+
+.click:focus:before {
+  -webkit-animation: effect_dylan 0.8s ease-out;
+  animation: effect_dylan 0.8s ease-out;
+}
+
+@-webkit-keyframes effect_dylan {
+  50% {
+    transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+
+  99% {
+    transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
+}
+
+@keyframes effect_dylan {
+  50% {
+    transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+
+  99% {
+    transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
+}
+
+/* slide btn animation  */
+
+.slide {
+  transition: color 0.6s;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.slide:hover {
+  color: #fff;
+}
+
+.slide.slide-white:hover {
+  color: black;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0 100% 0 0;
+  background-color: #111827;
+  transition: inset 0.4s, opacity .7s;
+  opacity: 0;
+}
+
+.slide.slide-white::before {
+  background-color: white;
+}
+
+.slide:hover::before{
+  opacity: 1;
+  inset: 0 0% 0 0;
+
+}
+
+.slide>span {
+  position: relative;
+  z-index: 10;
+}
