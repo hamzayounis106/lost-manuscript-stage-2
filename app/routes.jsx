@@ -16,6 +16,7 @@ import SingleSubject from "./routes/view/SingleSubject";
 import SinglePlace from "./routes/view/SinglePlace";
 import Period from "./routes/searchPages/Period";
 import SingleWork from "./routes/view/SingleWork";
+import Login from "./routes/view/Login";
 
 const routes = [
   {
@@ -29,6 +30,10 @@ const routes = [
             <MenuScript />
           </>
         ),
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "/catalogue",

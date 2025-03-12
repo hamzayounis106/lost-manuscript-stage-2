@@ -2,6 +2,7 @@ import { IoMenuSharp } from "react-icons/io5";
 import { IoMdSettings } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../../context/Context";
+import { Link } from "react-router-dom";
 
 export const linksData = [
     { id: 1, link: "About Us", to: "/about-us" },
@@ -44,9 +45,9 @@ const Navbar = () => {
 
                 {/* Actions */}
                 <div className='items-center space-x-6 hidden lg:flex'>
-                    <button className='slide slide-white border-black border-2 bg-black text-white px-4 py-2 rounded-sm cursor-pointer'>
+                    <Link to={"/login"} className='slide slide-white border-black border-2 bg-black text-white px-4 py-2 rounded-sm cursor-pointer'>
                         <span>Sign In</span>
-                    </button>
+                    </Link>
                     {/* <button className='cursor-pointer'>
             <IoMdSettings size='40px' />
           </button> */}
